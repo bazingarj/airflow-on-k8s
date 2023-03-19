@@ -14,7 +14,6 @@ with DAG('hello_world', description='Simple tutorial DAG', schedule_interval='*/
   hello_operator = PythonOperator(
     task_id='hello_task', 
     python_callable=print_hello, 
-    #executor_config={ "KubernetesExecutor": {"request_memory": "100Mi","limit_memory": "200Mi","request_cpu": "0.25","limit_cpu": "0.5"} }
     executor_config={ "KubernetesExecutor": 
     { 
     "resources": {
